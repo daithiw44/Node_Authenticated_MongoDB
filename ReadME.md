@@ -6,7 +6,7 @@ The app.js has an input page which, for the purposes of the example, takes a str
 So by going to http://localhost:3000/input/testvalue the string 'testvalue' would be inserted into the database.
 The button on the page when clicked makes a post request to get the values stored in the database, these values can been seen in chrome developer tools or firebug... they are not written to the DOM.
 
-What this exmpample looks at is -
+What this exmample looks at is -
 a) How to authenicate against a MongoDB server using node
 	db.open(function(err) {
 		 db.authenticate(config.settings.username, config.settings.password, function(err) {
