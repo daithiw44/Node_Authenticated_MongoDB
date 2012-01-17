@@ -8,10 +8,13 @@ The button on the page when clicked makes a post request to get the values store
 
 What this exmample looks at is -
 a) How to authenicate against a MongoDB server using node
-	db.open(function(err) {
-		 db.authenticate(config.settings.username, config.settings.password, function(err) {
-				//Inside here this callback will, if error free mean authenication has happened.
-		 });
+	<br/>
+	db.open(function(err) {<br/>
+		 db.authenticate(config.settings.username, config.settings.password, function(err) {<br/>
+				//Inside here this callback will, if error free mean authenication has happened.<br/>
+		 });<br/>
+		 ....
+		 <br/>
 	
 b) Authenictaing against a MongoDB server can take time. So after we open and authenicate against our MongoDB server we can continue to create our nodejs server but our database won't be available until the authenication call returns. Which could leave you with a nasty race condition where you are trying to read or write to a database that hasn't returned authenticated yet.
 
