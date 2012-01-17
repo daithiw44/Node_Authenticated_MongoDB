@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <%- body %>
+  <script src="/javascripts/utilities.js"></script>
+  <script>
+  (function(){
+    addEvent('thebutton','click', function(){
+      var objPostData ={};
+      objPostData.someValue= 'something';
+      sendRequest('/getValues/','POST', function() {
+        if (arguments.length > 0) {
+          var args = Array.prototype.slice.call(arguments);
+          var JSONargs = JSON.parse(args[0].responseText);
+          if(JSONargs.hasOwnProperty('result')){
+                      
+          } else {
+                     
+          }
+        }
+      },objPostData);
+    });
+  })();
+  </script>
+  </body>
+</html>
