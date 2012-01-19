@@ -14,10 +14,15 @@ a) How to authenicate against a MongoDB server using node
 	db.open(function(err) {<br/>
 		 db.authenticate(config.settings.username, config.settings.password, function(err) {<br/>
 				//Inside here this callback will, if error free mean authenication has happened.<br/>
+				//This is the most likely spot where you can experience a race condition and attempt to interact with the database before the authentication process has completed</br>
 		 });<br/>
 		 ....
 		 <br/>
 	
-b) Authenictaing against a MongoDB server can take time. So after we open and authenicate against our MongoDB server we can continue to create our nodejs server but our database won't be available until the authenication call returns. Which could leave you with a nasty race condition where you are trying to read or write to a database that hasn't returned authenticated yet.
+b) Authenictaing against a MongoDB server can take time. So after we open and authenicate against our MongoDB server 
+we can continue to create our nodejs server but our database won't be available until the authenication call returns. 
+Which could leave you with a race condition where you are trying to read or write to a database that hasn't 
+returned authenticated yet.
 
-What I'm not attempting to do here is tell you how to handle this delay in authentication. There are a number of options/things to consider including... just leaving your site sart up and letting the database authenticated when it gets to it. Problem here is if you are running somethiong like sparks 2 or forever where your server will just start up itself if it crashes for whatever reason.. or perhaps putting part of the routing of your site in a callback thats executed after authentication.
+
+
