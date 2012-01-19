@@ -14,7 +14,7 @@ a) How to authenicate against a MongoDB server using node
 	db.open(function(err) {<br/>
 		 db.authenticate(config.settings.username, config.settings.password, function(err) {<br/>
 				//Inside here this callback will, if error free mean authenication has happened.<br/>
-				//This is the most likely spot where you can experience a race condition and attempt to interact with the database before the authentication process has completed</br>
+				//This is the most place you can experience a race condition and attempt to interact with the database before the authentication process has completed</br>
 		 });<br/>
 		 ....
 		 <br/>
