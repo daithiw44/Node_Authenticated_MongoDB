@@ -1,8 +1,8 @@
-Authenticating against a MongoDB server using christkv / node-mongodb-native driver for NodeJS.
+Authenticating against a MongoDB server using christkv / node-mongodb-native driver for NodeJS for Cloud Foundry / MongoLabs etc..
 
 This is just a basic example that demonstartes how to make the call to authenticate against a MongoDB server and what to look out for.
 
-In this example the config.js is pointing to Cloud Floundry or MongoLab / localhost etc. Apart from Cloud Foundry most all other mongo servers will be the same.
+In this example the config.js is pointing to Cloud Foundry or MongoLab / localhost etc. Apart from Cloud Foundry most all other mongo servers will be the same.
 
 The app.js has an input page which, for the purposes of the example, takes a string from the querystring and inserts this value into the database. (Obviously just an example)
 So by going to http://localhost:3000/input/testvalue the string 'testvalue' would be inserted into the database.
